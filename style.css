@@ -22,7 +22,6 @@
 }
 
 .left-header {
-    border: 1px solid green;
     padding: 5px;
     display: flex;
     flex-direction: column;
@@ -30,19 +29,35 @@
 }
 
 .header-search {
-    border: solid 1px chartreuse;
     display: flex;
     gap: 5px;
 }
 
+.header-search input {
+    flex: 0 1 70%;
+    border-radius: 15px;
+    background-color:#ccd1d8;
+}
+
 .header-greeting {
-    border: 1px solid greenyellow;
     display: flex;
     flex-direction: row;
 }
 
+.greeting-img {
+    background-color: #bbe1b4;
+    border-radius: 100%;
+}
+
+.greeting-para, .notification-name {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.greeting-para > p + p {
+    font-weight: bold;
+}
+
 .right-header {
-    border: 1px solid yellow;
     display:flex;
     flex-direction: column;
     justify-content: start;
@@ -50,22 +65,34 @@
 }
 
 .header-notification {
-    border: 1px solid red;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .header-buttons {
-    border: 1px solid black;
     margin-top: auto;
     margin-bottom: 20px;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.header-buttons button {
+    border-radius: 12px;
+    padding: 4px;
+    background-color: #bbe1b4;
+    font-weight: bold;
+    color: #000;
+    border: 2px solid #ffffff;
+    min-width: 70px;
 }
 
 .search-icon, .notification-icon img {
-    max-width: 15px;
+    max-width: 18px;
+    border: 1px solid #bbe1b4;
+    border-radius: 100%;
 }
 
 .greeting {
@@ -74,6 +101,8 @@
 
 .notification-img img {
     max-width: 30px;
+    background-color: #bbe1b4;
+    border-radius: 100%;
 }
 
 /**Side bar selectors*/
@@ -92,16 +121,20 @@
 
 .logo .logo-text {
     align-self: center;
+    color: white;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: bold;
+    font-size: 20px;
 }
 
 .logo .logo-icon{
     max-width: 50px;
+    box-shadow: 0 0 4px;
 }
 
 /* Side-panel-two selectors uses flex-box for layout*/
 
 .side-panel-two-container, .side-panel-one-container {
-    border: 1px solid blue;
     padding-left: 15px;
     display: flex;
     flex-direction: column;
@@ -116,42 +149,76 @@
 .panel-icon {
     max-width: 25px;
     border: 1px solid green;
+    border-radius: 5px;
+    box-shadow: 0 0 3px;
+    color: white;
 }
 
 .panel-icon-text {
     align-self: center;
-    border: 1px solid purple;
+    color: white;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: bold;
 }
 
 /**Content selectors*/
 
 .content {
-    background-color: #bbe1b4;
+    background-color: #d9e9db;
     display: grid;
     grid-template-columns: 3fr 1fr;
     gap: 5px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
 }
 
 .left-content {
-    border: #ffffff 2px solid;
     grid-column: 1 / 2;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
 }
 
 .projects {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     grid-template-rows: 1fr;
-    gap: 3px;
+    gap: 20px;
+    padding: 10px;
+    
 }
 
 .project-div {
-    border: 2px dashed orangered;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 3px, 4px 2px #79a872 inset;
+    border-radius: 10px;
     max-width: 350px;
     min-height: 200px;
+    text-align: start;
+    padding: 10px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 16px;
+}
+
+.project-div p {
+    margin-top: 10px;
+}
+
+.indicators {
+    margin-top: auto;
+    margin-left: auto;
+    margin-right: 10px;
+    display: flex;
+    gap: 20px;
+    box-shadow: 0 1px 0px #0a0a0a inset;
+    border-radius: 10px;
+}
+
+.indicator-icon {
+    max-width: 20px;
 }
 
 .right-content {
-    border: 1px orange solid;
     grid-column: 2 / 3;
     display: flex;
     flex-direction: column;
@@ -159,26 +226,48 @@
 }
 
 .announcements-container, .trending-container {
-    border: black 1px solid;
     display: flex;
     flex-direction: column;
 }
 
 .announcement-divs, .trending-divs {
-    border: 1px solid purple;
     display: flex;
     flex-direction: column;
     gap: 1px;
+    box-shadow: 0 0 2px;
+    border-radius: 10px;
+    margin-top: 10px;
+    padding: 10px;
 }
 
 .announcement {
-    border: 1px dotted pink;
-    text-align: center;
+    text-align: start;
     display: flex;
     flex-direction: column;
+    
+}
+
+.announcement p, .trend-paras {
+    line-height: 1rem;
 }
 
 .trend {
-    border: 1px solid green;
     display: flex;
+    align-items: center;
+}
+
+.tag {
+    font-weight: bold;
+}
+
+hr {
+    opacity: 20%;
+    margin: 5px;
+}
+
+.trending-icon {
+    max-width: 30px;
+    border: 1px dotted green;
+    border-radius: 100%;
+    box-shadow: 0 0 5px;
 }
